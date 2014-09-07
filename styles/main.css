@@ -1,0 +1,100 @@
+/*********************
+* General
+**********************/
+body {
+	min-width: 790px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+
+	background:whitesmoke;
+}
+
+.main.row, div#calculator, div#game-screen {
+	height: 100%;
+}
+
+/*---Calculator------*/
+div#calculator {
+	min-width:360px;
+	padding-top: 1.5em;
+	padding-left: 2em;
+	padding-right: 2em;
+
+	text-align: center;
+}
+	div#calculator input[name="calculator-output"],
+	div#calculator input[name="previous-input"] {
+		text-align: right;
+		font-size: 1.5em;
+	}
+	div#calculator input[name="previous-input"] {
+		text-align: left;
+	}
+
+/*---Game-Screen------*/
+div#game-screen {
+	background:#f04124;
+}
+
+div#game-score h2 {
+	color:white;
+}
+
+div#question, div#answer {
+	min-height: 55%;	
+	padding-top: 1.5em;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+	div#question h1, div#answer h2 {
+		color: white;
+	}
+	div#question h1 {
+		text-align: center;
+		font-size: 2em;
+	}
+div#answer {
+	height: 45%;
+}
+	div#answer h2 {
+		font-size: 1.5em;
+	}
+
+.scores {
+	padding: 2em;
+}
+.scores h3, .scores li {
+	color: white;
+	font-weight: bold;
+}
+	.scores li {
+		padding-left: 5em;
+	}
+
+
+/*---Misc------*/
+li#aboutme {
+	color: white;
+	font-size: 0.9em;
+	padding: 0.5em;
+}
+	li#aboutme:hover {
+		background: #222;
+	}
+	li#aboutme div {
+		margin-top:0.75em;
+	}
+
+/*********************
+* Foundation Overrides
+**********************/
+section.top-bar-section ul.right {
+	padding-right:2em;
+}
+
+a.submit {
+	background:#C0341D;
+} 
+	a.submit:hover {
+		background:#F8A092;
+	}
