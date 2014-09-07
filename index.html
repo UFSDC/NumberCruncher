@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html no-js>
+	<head>
+		<!--meta-->
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>NumberCruncher- UFSDC</title>
+
+		<!--vendor css-->
+		<link rel="stylesheet" type="text/css" href="libs/foundation-5.4.0/css/normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/foundation-5.4.0/css/foundation.min.css"/>
+
+		<!--main.css-->
+		<link rel="stylesheet" type="text/css" href="styles/main.css"/>
+
+		<!--vendor libraries-->
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+		<script type="text/javascript" src="libs/foundation-5.4.0/js/vendor/modernizr.js"></script>
+		<script type="text/javascript" src="libs/foundation-5.4.0/js/foundation.min.js"></script>
+		<script async>
+			$(document).ready(function(){
+				$(this).foundation(); //initialize foundation for the document
+			});
+		</script>
+
+		<script src="scripts/utilities.js"></script>
+		<script src="scripts/main.js"></script>
+	</head>
+
+	<body ng-app="CalculatorApp">
+		<!--navigation bar-->
+		<nav class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href>NumberCruncher</a></h1>
+				</li>
+				<li class="toggle-topbar menu-icon"><a href><span>Menu</span></a></li>
+			</ul><!--title-area-->
+
+			<section class="top-bar-section">
+				<ul class="right">
+					<li class="has-dropdown">
+						<a>About</a>
+						<ul class="dropdown">
+							<li id="aboutme"><em>Munch, munch</em>.<br>
+							<div>This is NumberCruncher.</div><br>
+							<strong>UFSDC &copy; 2014</strong></li>
+						</ul>
+					</li>
+				</ul>
+			</section><!--top-bar-section-->
+		</nav><!--top-bar-->
+
+		<!--primary content-->
+		<div class="main row">
+			<!--calculator screen-->
+			<div id="calculator" class="large-6 small-6 columns" ng-controller="calculatorController">
+				<div class="row">
+					<input type="text" name="previous-input" placeholder="" readonly />
+					<input type="text" name="calculator-output" placeholder="Use this for your maths, dood" readonly/>
+				</div>
+				<div class="row">
+					<a href ng-click="addDigit(1)" class="button [radius round]">1</a>
+					<a href ng-click="addDigit(2)" class="button [radius round]">2</a>
+					<a href ng-click="addDigit(3)" class="button [radius round]">3</a>
+					<a href ng-click="addInput('+')" class="button [radius round]">+</a>
+				</div>
+				<div class="row">
+					<a href ng-click="addDigit(4)" class="button [radius round]">4</a>
+					<a href ng-click="addDigit(5)" class="button [radius round]">5</a>
+					<a href ng-click="addDigit(6)" class="button [radius round]">6</a>
+					<a href ng-click="addInput('-')" class="button [radius round]">-</a>
+				</div>
+				<div class="row">
+					<a href ng-click="addDigit(7)" class="button [radius round]">7</a>
+					<a href ng-click="addDigit(8)" class="button [radius round]">8</a>
+					<a href ng-click="addDigit(9)" class="button [radius round]">9</a>
+					<a href ng-click="addInput('*')" class="button [radius round]">*</a>
+				</div>
+				<div class="row">
+					<a href ng-click="clear()" class="button [radius round]">Clear</a>
+					<a href ng-click="addDigit(0)" class="button [radius round]">0</a>
+					<a href ng-click="addInput('/')" class="button [radius round]">/</a>
+				</div>
+			</div><!--#calculator-->
+
+			<!--game screen-->
+			<div id="game-screen" class="large-6 small-6 columns" ng-controller="qaController">
+				<div>
+					<div id="game-score">
+						<h2>Score: {{ score }}</h2>
+					</div>
+					<div id="question" class="row">
+						<h1>{{ question }}</h1>
+					</div>
+					<div id="answer" class="row">
+						<h2>Answer:</h2>
+						<input ng-model="guess" type="text" placeholder="Enter your answer here"/>
+						<a href ng-click="submit()" class="button submit">Submit</a>
+						<a href ng-click="newGame()" class="button submit">New Game</a>
+						<a href ng-click="viewHighScores()" class="button submit">View Scores</a>
+					</div>
+				</div>
+
+				<!--scoreboard-->
+				<div ng-show="showScores" class="row scores">
+					<hr/>
+					<h3>Scores (Ranked):</h3>
+					<ul class="no-bullet">
+						<li ng-repeat="score in scores track by $index | orderBy:score">{{ $index + 1 }}. &nbsp;{{score}}</li>
+					</ul>
+				</div>
+			</div><!--#game-screen-->
+		</div><!--row-->
+
+	</body>
+</html>
