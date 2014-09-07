@@ -29,7 +29,7 @@
 		<script src="scripts/main.js"></script>
 	</head>
 
-	<body ng-app="CalculatorApp">
+	<body>
 		<!--navigation bar-->
 		<nav class="top-bar" data-topbar role="navigation">
 			<ul class="title-area">
@@ -56,60 +56,60 @@
 		<!--primary content-->
 		<div class="main row">
 			<!--calculator screen-->
-			<div id="calculator" class="large-6 small-6 columns" ng-controller="calculatorController">
+			<div id="calculator" class="large-6 small-6 columns">
 				<div class="row">
 					<input type="text" name="previous-input" placeholder="" readonly />
 					<input type="text" name="calculator-output" placeholder="Use this for your maths, dood" readonly/>
 				</div>
 				<div class="row">
-					<a href ng-click="addDigit(1)" class="button [radius round]">1</a>
-					<a href ng-click="addDigit(2)" class="button [radius round]">2</a>
-					<a href ng-click="addDigit(3)" class="button [radius round]">3</a>
-					<a href ng-click="addInput('+')" class="button [radius round]">+</a>
+					<a href class="button [radius round]">1</a>
+					<a href class="button [radius round]">2</a>
+					<a href class="button [radius round]">3</a>
+					<a href class="button [radius round]">+</a>
 				</div>
 				<div class="row">
-					<a href ng-click="addDigit(4)" class="button [radius round]">4</a>
-					<a href ng-click="addDigit(5)" class="button [radius round]">5</a>
-					<a href ng-click="addDigit(6)" class="button [radius round]">6</a>
-					<a href ng-click="addInput('-')" class="button [radius round]">-</a>
+					<a href class="button [radius round]">4</a>
+					<a href class="button [radius round]">5</a>
+					<a href class="button [radius round]">6</a>
+					<a href class="button [radius round]">-</a>
 				</div>
 				<div class="row">
-					<a href ng-click="addDigit(7)" class="button [radius round]">7</a>
-					<a href ng-click="addDigit(8)" class="button [radius round]">8</a>
-					<a href ng-click="addDigit(9)" class="button [radius round]">9</a>
-					<a href ng-click="addInput('*')" class="button [radius round]">*</a>
+					<a href class="button [radius round]">7</a>
+					<a href class="button [radius round]">8</a>
+					<a href class="button [radius round]">9</a>
+					<a href class="button [radius round]">*</a>
 				</div>
 				<div class="row">
-					<a href ng-click="clear()" class="button [radius round]">Clear</a>
-					<a href ng-click="addDigit(0)" class="button [radius round]">0</a>
-					<a href ng-click="addInput('/')" class="button [radius round]">/</a>
+					<a href class="button [radius round]">Clear</a>
+					<a href class="button [radius round]">0</a>
+					<a href class="button [radius round]">/</a>
 				</div>
 			</div><!--#calculator-->
 
 			<!--game screen-->
-			<div id="game-screen" class="large-6 small-6 columns" ng-controller="qaController">
+			<div id="game-screen" class="large-6 small-6 columns">
 				<div>
 					<div id="game-score">
-						<h2>Score: {{ score }}</h2>
+						<h2></h2>
 					</div>
 					<div id="question" class="row">
-						<h1>{{ question }}</h1>
+						<h1></h1>
 					</div>
 					<div id="answer" class="row">
 						<h2>Answer:</h2>
-						<input ng-model="guess" type="text" placeholder="Enter your answer here"/>
-						<a href ng-click="submit()" class="button submit">Submit</a>
-						<a href ng-click="newGame()" class="button submit">New Game</a>
-						<a href ng-click="viewHighScores()" class="button submit">View Scores</a>
+						<input type="text" placeholder="Enter your answer here"/>
+						<a href class="button submit">Submit</a>
+						<a href class="button submit">New Game</a>
+						<a href class="button submit">View Scores</a>
 					</div>
 				</div>
 
 				<!--scoreboard-->
-				<div ng-show="showScores" class="row scores">
+				<div class="row scores">
 					<hr/>
 					<h3>Scores (Ranked):</h3>
 					<ul class="no-bullet">
-						<li ng-repeat="score in scores track by $index | orderBy:score">{{ $index + 1 }}. &nbsp;{{score}}</li>
+						<li></li>
 					</ul>
 				</div>
 			</div><!--#game-screen-->
