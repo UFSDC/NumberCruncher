@@ -1,6 +1,6 @@
 #NumberCruncher
 
-__An AngularJS tutorial for UF Software Development Club__
+__An AngularJS tutorial for UF Software Development Club. See the accompanying tutorial [here](http://ufsdc.github.io/articles/2014/09/07/angularjs-tutorial/)__
 
 ###What is
 
